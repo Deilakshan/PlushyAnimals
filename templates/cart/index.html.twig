@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block body %}
+
+
+<div class="container katy text-white min-vh-100 d-flex justify-content-center align-items-center">
+    
+    <div class="ensemble">
+
+   
+    <h1>Mon panier</h1>
+    
+
+    {% if items | length > 0 %}
+
+        <table class="table text-white">
+            <thead>
+                <tr>
+                    <th>Produits</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item.product.nom }}</td>
+                        <td>{{ item.product.prix }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.prix * item.quantity }}</td>
+                        <td>
+                            <a href="{{ path('app_cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total : </td>
+                    <td>{{total}}</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+
+        </table>
+    {% else %}
+        <p>Aucunes peluches dans le panier</p>
+    {% endif %}
+
+    <a href={{ path('app_renard_index') }} class="badge bg-info text-dark">Continuer mes achats </a>
+
+    </div>
+   
+</div>
+{% endblock %}

@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,200;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* body {
+  height: 120vw;
+  background-image: url(/media/back3.jpg);
+  background-size: cover;
+  overflow: scroll;
+}  */
+
+.navbar .collapse .navbar-nav .nav-link:hover,
+.navbar .collapse .navbar-nav .nav-link.active:hover {
+  color: coral;
+}
+
+.logo {
+  color: white;
+  font-size: 40px;
+}
+
+
+.catshow {
+  margin-top: 100px;
+}
+
+.bob {
+  background-image: url(/media/trees.jpg);
+  background-size: cover;
+}
+
+.dick {
+  background-image: url(/media/flower.jpg);
+  background-size: cover;
+}
+
+.katy {
+  background-image: url(/media/park.jpg);
+  background-size: cover;
+}
+
+.josh {
+  background-image: url(/media/seamless.jpg);
+  background-size: cover;
+}
+
+
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat scroll center;
+  background-size: cover;
+}
+
+.carousel-caption {
+  bottom: 200px;
+}
+
+.carousel-caption h2 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  font-family: 'Lobster', cursive;
+}
+
+.carousel-caption p {
+  margin: auto;
+  font-size: 18px;
+}
+
+.slider-btn {
+  margin-top: 30px;
+}
+
+.slider-btn .btn {
+  background-color: salmon;
+  color: white;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+/* {----------------------------------------------------------} */
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#search-container {
+  margin: 1em 0;
+}
+
+#search-container input {
+  background-color: transparent;
+  width: 40%;
+  border-bottom: 2px solid black;
+  padding: 1em 0.3em;
+}
+
+#search-container input:focus {
+  border-bottom-color: salmon ;
+}
+
+#search-container button {
+  padding: 1em 2em;
+  margin-left: 1em;
+  background-color: salmon;
+  color: beige;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.button-value {
+  border: 2px solid salmon;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: orangered;
+  cursor: pointer;
+}
+
+

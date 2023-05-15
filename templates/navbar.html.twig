@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-primary fixed-top">
+	<div class="container">
+		<a class="navbar-brand" href={{path("app_home")}}><img src={{asset("media/teddy.png")}} width="80px" alt="logo"/></a>
+		<h2 class="logo">PlushyAnimals</h2>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto my-2 my-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active fw-bolder" aria-current="page" href={{path("app_home")}}>Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active fw-bolder" href={{path("app_renard_index")}}>Peluches</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active fw-bolder" href={{path("app_contact")}}>Contact</a>
+				</li>
+
+				{% if is_granted('ROLE_USER') %}
+				<li class="nav-item dropdown">
+					<a class="nav-link active fw-bolder dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Mon compte
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href={{path("app_cart")}}>Consulter mon panier</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href={{path("app_profile_show")}}>Modifier mes coordonnées</a>
+						</li>
+						{# <li><hr class="dropdown-divider"></li> #}
+					
+					</ul>
+				</li>
+				{% endif %}
+
+				{% if is_granted('ROLE_ADMIN') %}
+				<li class="nav-item dropdown">
+					<a class="nav-link active fw-bolder dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Espace Admin
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href={{path("app_admin_produits_index")}}>Gestion des produits</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href={{path("admin")}}>EasyAdmin</a>
+						</li>
+						{# <li><hr class="dropdown-divider"></li> #}
+					</ul>
+				</li>
+				{% endif %}
+
+				{% if app.user %}
+					<li class="nav-item dropdown badge bg-warning">
+						<a class="nav-link dropdown-toggle fw-bolder text-info" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							{{ app.user.userIdentifier }}
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href={{path("app_logout")}}>Bonjour {{ app.user.userIdentifier }}, si tu veux sortir, appuie ici</a>
+							</li>
+						</ul>
+					</li>
+				{% endif %}
+	
+
+			</ul>
+			<a class="nav-link fw-bolder" href={{path("app_register")}}><span class="badge rounded-pill bg-info">Inscription</span></a>
+			<a class="nav-link fw-bolder" href={{path("app_login")}}><span class="badge rounded-pill bg-danger">Connexion</span></a>
+
+			{# <ul class="navbar-nav d-flex">
+				<li class="nav-item">
+					<a class="nav-link" href={{path("app_contact")}}><img src={{asset("media/panier.png")}} width="50px"/></i>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href={{path("app_contact")}}><img src={{asset("media/account.png")}} width="50px"/></i>
+				</li>
+				<li></li>
+			</ul> #}
+
+		
+		</div>
+	</div>
+</nav>
+
+
+

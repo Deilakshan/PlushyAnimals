@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits index
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+
+		<div class="catshow">
+
+		<h1>Produits de Plushy Animals</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Image</th>
+					<th>Nom</th>
+					<th>Prix</th>
+					<th>Description</th>
+					<th>Marque</th>
+					<th>Reference</th>
+					<th>Age</th>
+					<th>Genre</th>
+					<th>Entretien</th>
+					<th>Date</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for produit in produits %}
+					<tr>
+						<td>{{ produit.id }}</td>
+						<td>
+							<img src={{ asset('uploads/' ~ produit.imageFilename )}} width="100%" height="245px"/>
+						</td>
+						<td>{{ produit.nom }}</td>
+						<td>{{ produit.prix }}</td>
+						<td>{{ produit.description }}</td>
+						<td>{{ produit.marque }}</td>
+						<td>{{ produit.reference }}</td>
+						<td>{{ produit.age }}</td>
+						<td>{{ produit.genre }}</td>
+						<td>{{ produit.entretien }}</td>					
+						<td>{{ produit.createdAt }}</td>
+						<td>
+							<a href="{{ path('app_admin_produits_show', {'id': produit.id}) }}">show</a>
+							<a href="{{ path('app_admin_produits_edit', {'id': produit.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="10">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_admin_produits_new') }}">Create new</a>
+
+	</div>
+
+{% endblock %}

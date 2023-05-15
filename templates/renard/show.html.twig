@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits
+{% endblock %}
+
+{% block body %}
+
+	<div class="container text-white min-vh-100 d-flex justify-content-center align-items-center">
+
+		<div class="card text-dark mb-3">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src={{ asset('uploads/' ~ produit.imageFilename )}} class="img-fluid rounded-start" width="100%">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h2 class="card-title fw-bolder">{{ produit.nom }}</h2>
+				        <h3 class="card-text">{{ produit.prix }}€</h3>
+                        <h4 class="card-text fw-bold">Description de la peluche</h4>
+				        <p class="card-text">{{ produit.description }}</p>
+                        <h4 class="card-text fw-bold">Caractéristiques</h4>
+				        <p class="card-text">Marque : {{ produit.marque }}</p>
+				        <p class="card-text">Référence : {{ produit.reference }}</p>
+				        <p class="card-text">Age : {{ produit.age }}</p>
+				        <p class="card-text">Genre : {{ produit.genre }}</p>
+				        <p class="card-text">Entretien : {{ produit.entretien }}</p>
+						<div class="row">
+							<div class="col">
+							<a href={{ path('app_renard_index') }} class="btn btn-primary">Retour au catalogue</a>
+							</div>
+							{% if app.user %}
+							<div class="col">
+							<a href={{ path('app_cart_add', {'id' : produit.id }) }} class="btn btn-primary">Ajouter au panier</a>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+{% endblock %}

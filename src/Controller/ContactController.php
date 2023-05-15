@@ -15,7 +15,7 @@ class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
     public function index(
-        Request $request, Mailer $mailer, 
+        Request $request, 
         EntityManagerInterface $manager): Response
         {
         $contact = new Contact();
@@ -26,7 +26,7 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
             // $email=$contact['email'];
-            $mailer->sendEmail();
+            // $mailer->sendEmail();
 
             $manager->persist($contact);
             $manager->flush();

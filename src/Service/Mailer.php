@@ -10,8 +10,10 @@ class Mailer
 {
     private $mailer;
 
+    //classe est instanciée
     public function __construct(MailerInterface $mailer)
-    {
+    {   
+        // stocker dans la propriété $mailer un MailerInterface
         $this->mailer = $mailer;
     }
 
@@ -24,9 +26,9 @@ class Mailer
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')
             //->priority(Email::PRIORITY_HIGH)
-            ->subject('Hello Ireland')
+            ->subject('Hello World')
             ->text('Sending emails is fun again!')
-            ->html('<p>We have won the war against the red coats</p>');
+            ->html('<p>We have won the house</p>');
 
         $this->mailer->send($email);
 

@@ -1,4 +1,13 @@
 {
+    "connectholland/cookie-consent-bundle": {
+        "version": "0.11",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "0.4",
+            "ref": "9725d24dc996a1041f25b9e29fc1567a861f98e4"
+        }
+    },
     "doctrine/annotations": {
         "version": "1.14",
         "recipe": {

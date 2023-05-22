@@ -5,9 +5,8 @@
 
 {% block body %}
 
-	<div class="container">
-
-		<div class="catshow">
+	
+	<div class="catshow">
 
 		<h1>Produits de Plushy Animals</h1>
 
@@ -25,7 +24,8 @@
 					<th>Genre</th>
 					<th>Entretien</th>
 					<th>Date</th>
-					<th>actions</th>
+					<th>Catégorie</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,7 +33,7 @@
 					<tr>
 						<td>{{ produit.id }}</td>
 						<td>
-							<img src={{ asset('uploads/' ~ produit.imageFilename )}} width="100%" height="245px"/>
+							<img src={{ asset('uploads/' ~ produit.imageFilename )}} width="120%" height="245px"/>
 						</td>
 						<td>{{ produit.nom }}</td>
 						<td>{{ produit.prix }}</td>
@@ -44,6 +44,7 @@
 						<td>{{ produit.genre }}</td>
 						<td>{{ produit.entretien }}</td>					
 						<td>{{ produit.createdAt }}</td>
+						<td>{{ produit.category }}</td>
 						<td>
 							<a href="{{ path('app_admin_produits_show', {'id': produit.id}) }}">show</a>
 							<a href="{{ path('app_admin_produits_edit', {'id': produit.id}) }}">edit</a>
@@ -51,7 +52,7 @@
 					</tr>
 				{% else %}
 					<tr>
-						<td colspan="10">no records found</td>
+						<td colspan="10">Pas de produits trouvés</td>
 					</tr>
 				{% endfor %}
 			</tbody>

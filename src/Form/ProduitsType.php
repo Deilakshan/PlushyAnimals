@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Produits;
+use App\Repository\CategoryRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,6 +26,7 @@ class ProduitsType extends AbstractType
             ->add('age')
             ->add('genre')
             ->add('entretien')
+            ->add('category')
         ; 
                   
     }

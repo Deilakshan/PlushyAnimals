@@ -28,11 +28,9 @@
 							<div class="col">
 							<a href={{ path('app_renard_index') }} class="btn btn-primary">Retour au catalogue</a>
 							</div>
-							{% if app.user %}
 							<div class="col">
 							<a href={{ path('app_cart_add', {'id' : produit.id }) }} class="btn btn-primary">Ajouter au panier</a>
 							</div>
-							{% endif %}
 						</div>
 					</div>
 				</div>

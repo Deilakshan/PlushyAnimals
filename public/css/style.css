@@ -14,19 +14,8 @@
   overflow: scroll;
 }  */
 
-.navbar .collapse .navbar-nav .nav-link:hover,
-.navbar .collapse .navbar-nav .nav-link.active:hover {
-  color: coral;
-}
-
-.logo {
-  color: white;
-  font-size: 40px;
-}
-
-
 .catshow {
-  margin-top: 110px;
+  margin-top: 100px;
 }
 
 .bob {
@@ -48,6 +37,21 @@
   background-image: url(/media/seamless.jpg);
   background-size: cover;
 }
+
+
+.navbar .collapse .navbar-nav .nav-link:hover,
+.navbar .collapse .navbar-nav .nav-link.active:hover {
+  color: coral;
+}
+
+.logo {
+  color: purple;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+
+
 
 
 .carousel-item {
@@ -93,43 +97,6 @@ h1 {
 
 /* {----------------------------------------------------------} */
 
-.wrapper {
-  width: 95%;
-  margin: 0 auto;
-}
 
-#search-container {
-  margin: 1em 0;
-}
-
-#search-container input {
-  background-color: transparent;
-  width: 40%;
-  border-bottom: 2px solid black;
-  padding: 1em 0.3em;
-}
-
-#search-container input:focus {
-  border-bottom-color: salmon ;
-}
-
-#search-container button {
-  padding: 1em 2em;
-  margin-left: 1em;
-  background-color: salmon;
-  color: beige;
-  border-radius: 5px;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-}
-
-.button-value {
-  border: 2px solid salmon;
-  padding: 1em 2.2em;
-  border-radius: 3em;
-  background-color: transparent;
-  color: orangered;
-  cursor: pointer;
-}
 
 

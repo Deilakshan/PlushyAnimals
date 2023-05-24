@@ -65,6 +65,9 @@ class CartController extends AbstractController
         $panier = $session->get('panier', []);
 
         if(!empty($panier[$id])) {
+            $panier[$id]--;
+        } else {
+            // $panier[$id] = 1;
             unset($panier[$id]);
         }
 
@@ -72,4 +75,5 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute("app_cart");
     }
+
 }

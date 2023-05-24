@@ -32,9 +32,14 @@
                         <td>{{ item.product.prix }}</td>
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.product.prix * item.quantity }}</td>
+                         <td>
+                            <a href="{{ path('app_cart_add', {'id': item.product.id}) }}" class="btn btn-success btn-sm">
+                                <i class="fa-sharp fa-regular fa-plus"></i>
+                            </a>
+                        </td>
                         <td>
                             <a href="{{ path('app_cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash"></i>
+                                <i class="fas fa-trash "></i>
                             </a>
                         </td>
                     </tr>
@@ -54,7 +59,10 @@
         <p>Aucunes peluches dans le panier</p>
     {% endif %}
 
-    <a href={{ path('app_renard_index') }} class="badge bg-info text-dark">Continuer mes achats </a>
+    <div>
+    <a href={{ path('app_renard_index') }} class="badge bg-info text-white">Continuer mes achats </a>
+    <a href="#" class="badge bg-success text-white">Passer ma commande </a>
+    <div>
 
     </div>
    

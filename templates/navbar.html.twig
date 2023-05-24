@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-primary fixed-top">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href={{path("app_home")}}><img src={{asset("media/teddy.png")}} width="80px" alt="logo"/></a>
 		<h2 class="logo">PlushyAnimals</h2>
@@ -12,7 +13,7 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link active fw-bolder" href={{path("app_renard_index")}}>Peluches</a>
-				</li>
+				</li> 
 				<li class="nav-item">
 					<a class="nav-link active fw-bolder" href={{path("app_contact")}}>Contact</a>
 				</li>
@@ -45,16 +46,18 @@
 							<a class="dropdown-item" href={{path("app_admin_produits_index")}}>Gestion des produits</a>
 						</li>
 						<li>
+							<a class="dropdown-item" href={{path("app_admin_category_index")}}>Gestion des catégories</a>
+						</li>
+						<li>
 							<a class="dropdown-item" href={{path("admin")}}>EasyAdmin</a>
 						</li>
-						{# <li><hr class="dropdown-divider"></li> #}
 					</ul>
 				</li>
 				{% endif %}
 
 				{% if app.user %}
-					<li class="nav-item dropdown badge bg-warning">
-						<a class="nav-link dropdown-toggle fw-bolder text-info" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<li class="nav-item dropdown badge bg-info">
+						<a class="nav-link dropdown-toggle fw-bolder text-dark" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							{{ app.user.userIdentifier }}
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produits index{% endblock %}
+{% block title %}Peluches{% endblock %}
 
 {% block body %}
 
@@ -10,19 +10,16 @@
 
             <h1>Nos peluches</h1>
 
-            <div class="wrapper">
-                <div id="search-container">
-                    <input type="search" id="search-input" placeholder="Search product name here..."/>
-                    <button id="search">Search</button>
-                </div>
-                <div id="buttons">
-                    <button class="button-value">Ours</button>
-                    <button class="button-value">Renard</button>
-                    <button class="button-value">Lapin</button>
-                    <button class="button-value">Chien</button>
-                    <button class="button-value">Chat</button>
-                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="my-3 d-flex align-items-center">
+                        <a href={{path("app_renard_index")}} class="btn btn-sm btn-outline-dark mx-1">Tous les produits</a>
+                        {% for category in categories %}
+                        <a href={{ path("app_produits_category",{category: category.id}) }} class="btn btn-sm btn-outline-dark mx-1">{{category.title}}</a>
+                        {% endfor %}
 
+                    </div>
+                </div>
             </div>
 
 
@@ -42,7 +39,7 @@
                         </div>
 
                 {% else %}
-                <p>Aucune carte trouvée dans le catalogue</p>
+                <p>Catalogue vide !</p>
                 {% endfor %}
 
             </div>

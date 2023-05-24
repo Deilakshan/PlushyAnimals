@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/renard')]
 class RenardController extends AbstractController
 {
-    private $produitsRepository;
+   /* private $produitsRepository;
     private $categoryRepository;
     
     public function __construct(
@@ -25,7 +25,7 @@ class RenardController extends AbstractController
     {
         $this->produitsRepository = $produitsRepository;
         $this->categoryRepository = $categoryRepository;
-    }
+    }*/
 
     #[Route('/', name: 'app_renard_index', methods: ['GET'])]
     public function index(ProduitsRepository $produitsRepository, 

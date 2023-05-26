@@ -2,24 +2,24 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href={{path("app_home")}}><img src={{asset("media/teddy.png")}} width="80px" alt="logo"/></a>
-		<h2 class="logo">PlushyAnimals</h2>
+		<h2 class="logo" href={{path("app_home")}}><span class="stu">Plushy</span>Animals</h2>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto my-2 my-lg-0">
-				<li class="nav-item">
+				<li class="nav-item badge bg-warning text-dark">
 					<a class="nav-link active fw-bolder" aria-current="page" href={{path("app_home")}}>Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item badge bg-warning text-dark">
 					<a class="nav-link active fw-bolder" href={{path("app_renard_index")}}>Peluches</a>
 				</li> 
-				<li class="nav-item">
+				<li class="nav-item badge bg-warning text-dark">
 					<a class="nav-link active fw-bolder" href={{path("app_contact")}}>Contact</a>
 				</li>
 
 				{% if is_granted('ROLE_USER') %}
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown badge bg-warning text-dark">
 					<a class="nav-link active fw-bolder dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Mon compte
 					</a>
@@ -37,7 +37,7 @@
 				{% endif %}
 
 				{% if is_granted('ROLE_ADMIN') %}
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown badge bg-warning text-dark">
 					<a class="nav-link active fw-bolder dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Espace Admin
 					</a>
@@ -57,7 +57,7 @@
 
 				{% if app.user %}
 					<li class="nav-item dropdown badge bg-info">
-						<a class="nav-link dropdown-toggle fw-bolder text-dark" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link active dropdown-toggle fw-bolder text-dark" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							{{ app.user.userIdentifier }}
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -70,8 +70,8 @@
 	
 
 			</ul>
-			<a class="nav-link fw-bolder" href={{path("app_register")}}><span class="badge rounded-pill bg-info">Inscription</span></a>
-			<a class="nav-link fw-bolder" href={{path("app_login")}}><span class="badge rounded-pill bg-danger">Connexion</span></a>
+			<a class="nav-link active fw-bolder" href={{path("app_register")}}><span class="badge rounded-pill bg-info">Inscription</span></a>
+			<a class="nav-link active fw-bolder" href={{path("app_login")}}><span class="badge rounded-pill bg-danger">Connexion</span></a>
 
 			{# <ul class="navbar-nav d-flex">
 				<li class="nav-item">

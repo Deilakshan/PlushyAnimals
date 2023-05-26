@@ -8,7 +8,6 @@
 }
 
 /* body {
-  height: 120vw;
   background-image: url(/media/back3.jpg);
   background-size: cover;
   overflow: scroll;
@@ -36,33 +35,46 @@
 .josh {
   background-image: url(/media/seamless.jpg);
   background-size: cover;
+  max-height: 100%;
 }
 
 
 .navbar .collapse .navbar-nav .nav-link:hover,
 .navbar .collapse .navbar-nav .nav-link.active:hover {
-  color: coral;
+  color: purple;
 }
 
-.logo {
-  color: purple;
+.logo { 
   font-size: 30px;
   font-weight: 300;
+  color: black;
 }
 
+.stu {
+  color: purple;
+}
 
+.badge {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.navbar-nav a {
+  font-size: 15px;
+  font-weight: 400;
+}
 
 
 
 .carousel-item {
   height: 100vh;
   min-height: 300px;
-  background: no-repeat scroll center;
-  background-size: cover;
+  
 }
 
 .carousel-caption {
   bottom: 200px;
+  z-index: 2;
 }
 
 .carousel-caption h2 {
@@ -75,7 +87,9 @@
 
 .carousel-caption p {
   margin: auto;
+  width: 60%;
   font-size: 18px;
+  line-height: 1.9;
 }
 
 .slider-btn {
@@ -83,11 +97,11 @@
 }
 
 .slider-btn .btn {
-  background-color: salmon;
+  background-color: purple;
   color: white;
   border-radius: 2rem;
   padding: 1.5rem 2rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-right: 15px;
 }
 
@@ -95,8 +109,151 @@ h1 {
   font-size: 4rem;
 }
 
-/* {----------------------------------------------------------} */
+.w-100 {
+  height: 100vh;
+}
+
+/* --- responsive css --- */
+
+@media screen and (min-width: 770px) and (max-width: 991px) {
+  .carousel-caption {
+    bottom: 370px;
+  }
+  .carousel-caption p {
+    width: 100%;
+  }
+}
 
 
+@media screen and (max-width: 900px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .carousel-caption {
+    bottom: 125px;
+  }
+  .carousel-caption h2 {
+    font-size: 20px;
+  }
+  .carousel-caption a {
+    padding: 10px 15px;
+  }
+  .carousel-caption p {
+    width: 100%;
+    line-height: 1.6;
+    font-size: 12px;
+  }
+
+  .main {
+    bottom: 100px;
+  }
+
+  picture img {
+    width: 400px;
+  }
+
+  .header h3 {
+    font-size: 40px;
+  }
+}
 
 
+.main {
+  max-width: 100%;
+  height: 80vh;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.main header {
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header h3 {
+  font-size: 2rem;
+}
+
+.products {
+  width: 100%;
+  height: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /*gap: 30px; */
+}
+
+.product {
+  width: 350px;
+  height: 100%;
+  margin: 0 20px 0 0;
+  border-radius: 20px;
+  position: relative;
+  /* background-color: purple; */
+  box-shadow: 0 5px 20 px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 30px;
+  transition: 0.3s;
+
+}
+
+picture {
+  width: 100%;
+  height: 60%;
+  display: grid;
+  place-items: center;
+}
+
+picture img {
+  width: 310px;
+}
+
+.nameprice {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nameprice p {
+  font-size: 1.5em;
+  text-transform: capitalize;
+  color: black;
+}
+
+.nameprice span {
+  font-size: 1.5em;
+  color: purple;
+}
+
+.stars svg {
+  font-size: 1.3em;
+  color: orange;
+} 
+
+.buy {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.buy a {
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.buy a:hover {
+  transform: scale(1.1);
+}

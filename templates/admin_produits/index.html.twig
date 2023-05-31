@@ -43,7 +43,6 @@
 						<td>{{ produit.age }}</td>
 						<td>{{ produit.genre }}</td>
 						<td>{{ produit.entretien }}</td>					
-						<td>{{ produit.createdAt }}</td>
 						<td>{{ produit.category }}</td>
 						<td>
 							<a href="{{ path('app_admin_produits_show', {'id': produit.id}) }}">show</a>
@@ -59,6 +58,10 @@
 		</table>
 
 		<a href="{{ path('app_admin_produits_new') }}">Create new</a>
+
+		<div class="container d-flex justify-content-center align-items-center mb-8">
+			{{ knp_pagination_render(produits) }}
+		</div>
 
 	</div>
 

@@ -6,6 +6,7 @@ use App\Entity\Produits;
 use App\Form\ProduitsType;
 use App\Repository\ProduitsRepository;
 use App\Service\FileUploader;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +16,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminProduitsController extends AbstractController
 {
     #[Route('/', name: 'app_admin_produits_index', methods: ['GET'])]
-    public function index(ProduitsRepository $produitsRepository): Response
+    public function index(ProduitsRepository $produitsRepository,
+    PaginatorInterface $paginatorInterface, Request $request): Response
     {
+        $data = $produitsRepository->findAll();
+        $produits = $paginatorInterface->paginate(
+            $data,
+            $request->query->getInt('page', 1),
+            6
+        );
+
         return $this->render('admin_produits/index.html.twig', [
             'produits' => $produitsRepository->findAll(),
+            'produits' => $produits
         ]);
     }
 

@@ -41,106 +41,105 @@
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
-	</div><br>
-
-	{# section produits #}
-
-	<div class="main">
-
-		<div class="header">
-			<h3>Quelques unes de nos belles peluches</h3>		
-		</div>
-
-		<div class="products">
-
-			<div class="product">
-				<picture>
-					<img src={{asset("media/lapin.jpg")}}>
-				</picture>
-				<div class="nameprice">
-					<p>Peluche lapin marron clair</p>
-					<span>30€</span>
-				</div>
-				<div class="stars">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-				</div>
-				<div class="buy">
-					<a href={{ path('app_cart_add', {'id' : 10 }) }} >Ajouter au Panier</a>
-				</div>
-
-			</div>
-
-
-			<div class="product">
-				<picture>
-					<img src={{asset("media/corgi.jpg")}}>
-				</picture>
-				<div class="nameprice">
-					<p>Peluche chien corgi</p>
-					<span>50€</span>
-				</div>
-				<div class="stars">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-				</div>
-				<div class="buy">
-					<a href={{ path('app_cart_add', {'id' : 12 }) }} >Ajouter au Panier</a>
-				</div>
-					
-			</div>
-
-			<div class="product">
-				<picture>
-					<img src={{asset("media/neige.jpg")}}>
-				</picture>
-				<div class="nameprice">
-					<p>Peluche léopard des neiges</p>
-					<span>45€</span>
-				</div>
-				<div class="stars">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-				</div>
-				<div class="buy">
-					<a href={{ path('app_cart_add', {'id' : 15 }) }} >Ajouter au Panier</a>
-				</div>
-					
-			</div>
-
-			<div class="product">
-				<picture>
-					<img src={{asset("media/goldy.jpg")}}>
-				</picture>
-				<div class="nameprice">
-					<p>Peluche ours mordoré</p>
-					<span>40€</span>
-				</div>
-				<div class="stars">
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-					<i class="fa-solid fa-star"></i>
-				</div>
-				<div class="buy">
-					<a href={{ path('app_cart_add', {'id' : 14 }) }} >Ajouter au Panier</a>
-				</div>
-					
-			</div>
-
-		</div>
-
 	</div>
 
+	<section class="owen"> 
+
+	 	<div class="container">
+
+            <div class="row">
+
+                <div class="col mt-4">
+                    <h3 class="fw-bold">Quelques unes de nos belles peluches</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+		<div class="container mt-3">
+            <div class="row">
+
+                <div class="card rounded col-12 col-sm-6 col-md-4 col-lg-4" style="width: 20rem;">
+                    <img src={{asset("media/lapin.jpg")}}>
+                    <div class="card-body mt-3">
+                        <h5 class="card-title" color="purple">Peluche lapin marron clair</h5>
+                        <a class="btn btn-primary">30€</a>
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div><br>
+						<div class="buy">
+							<a href={{ path('app_cart_add', {'id' : 10 }) }} >Ajouter au Panier</a>
+						</div>
+                    </div>
+                </div>
+
+               
+                <div class="card rounded col-12 col-sm-6 col-md-4 col-lg-4" style="width: 20rem;">
+                    <img src={{asset("media/corgi.jpg")}}>
+                    <div class="card-body mt-3">
+                        <h5 class="card-title">Peluche chien corgi</h5><br>
+                        <a class="btn btn-primary">50€</a>
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div><br>
+						<div class="buy">
+							<a href={{ path('app_cart_add', {'id' : 12 }) }} >Ajouter au Panier</a>
+						</div>
+                    </div>
+                </div>
+
+				
+                <div class="card rounded col-12 col-sm-6 col-md-4 col-lg-4" style="width: 20rem;">
+                    <img src={{asset("media/neige.jpg")}}>
+                    <div class="card-body mt-3">
+                        <h5 class="card-title">Peluche léopard des neiges</h5>
+                        <a class="btn btn-primary">45€</a>
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div><br>
+						<div class="buy">
+							<a href={{ path('app_cart_add', {'id' : 15 }) }} >Ajouter au Panier</a>
+						</div>
+                    </div>
+                </div>
+
+				<div class="card rounded col-12 col-sm-6 col-md-4 col-lg-4" style="width: 20rem;">
+                    <img src={{asset("media/goldy.jpg")}}>
+                    <div class="card-body mt-3">
+                        <h5 class="card-title">Peluche ours mordoré</h5><br>
+                        <a class="btn btn-primary">40€</a>
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div><br>
+						<div class="buy">
+							<a href={{ path('app_cart_add', {'id' : 14 }) }} >Ajouter au Panier</a>
+						</div>
+                    </div>
+                </div>
+
+			</div>
+		</div>
+
+	
+
+	</section>
+	
 
 {% endblock %}

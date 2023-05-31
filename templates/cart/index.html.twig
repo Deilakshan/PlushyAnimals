@@ -19,6 +19,7 @@
             <thead>
                 <tr>
                     <th>Produits</th>
+                    <th>Image</th>
                     <th>Prix</th>
                     <th>Quantité</th>
                     <th>Total</th>
@@ -29,16 +30,24 @@
                 {% for item in items %}
                     <tr>
                         <td>{{ item.product.nom }}</td>
-                        <td>{{ item.product.prix }}</td>
+                        <td>
+                        <img src={{ asset('uploads/' ~ item.product.imageFilename )}} width="80px" height="130px"/>
+                        </td>
+                        <td>{{ item.product.prix }} €</td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.product.prix * item.quantity }}</td>
-                         <td>
+                        <td>{{ item.product.prix * item.quantity }} €</td>
+                        <td>
                             <a href="{{ path('app_cart_add', {'id': item.product.id}) }}" class="btn btn-success btn-sm">
                                 <i class="fa-sharp fa-regular fa-plus"></i>
                             </a>
                         </td>
                         <td>
-                            <a href="{{ path('app_cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                            <a href="{{ path('app_cart_decrease', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                                <i class="fa-sharp fa-regular fa-minus"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('app_cart_remove', {'id': item.product.id}) }}" class="btn btn-warning btn-sm">
                                 <i class="fas fa-trash "></i>
                             </a>
                         </td>
@@ -48,20 +57,20 @@
 
             <tfoot>
                 <tr>
-                    <td colspan="3">Total : </td>
-                    <td>{{total}}</td>
+                    <td colspan="4">Total : </td>
+                    <td>{{total}} €</td>
                     <td></td>
                 </tr>
             </tfoot>
 
         </table>
     {% else %}
-        <p>Aucunes peluches dans le panier</p>
+        <p>Le panier est vide !</p>
     {% endif %}
 
     <div>
     <a href={{ path('app_renard_index') }} class="badge bg-info text-white">Continuer mes achats </a>
-    <a href="#" class="badge bg-success text-white">Passer ma commande </a>
+    <a href={{ path('app_commande') }} class="badge bg-success text-white">Passer ma commande </a>
     <div>
 
     </div>

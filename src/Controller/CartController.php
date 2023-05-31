@@ -64,13 +64,24 @@ class CartController extends AbstractController
     {
         $panier = $session->get('panier', []);
 
-        if(!empty($panier[$id])) {
+        unset($panier[$id]);
+
+        $session->set('panier', $panier);
+
+        return $this->redirectToRoute("app_cart");
+    }
+
+    #[Route('/panier/decrease/{id}', name: 'app_cart_decrease')]
+    public function decrease($id, SessionInterface $session)
+    {
+        $panier = $session->get('panier', []);
+
+        if(!empty($panier[$id] > 1)) {
             $panier[$id]--;
         } else {
-            // $panier[$id] = 1;
             unset($panier[$id]);
         }
-
+        
         $session->set('panier', $panier);
 
         return $this->redirectToRoute("app_cart");

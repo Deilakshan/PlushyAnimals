@@ -143,7 +143,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->prenom = $prenom;
 
         return $this;
-    }
+    }  
 
    
 }

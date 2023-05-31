@@ -28,12 +28,12 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
-            $email = $contact['email'];
-            $mailer->sendEmail(); 
+            // $email = $contact['email'];
+            // $mailer->sendEmail(); 
 
-            return $this->render('contact/index.html.twig', [
-                'email' => $email
-            ]);
+            // return $this->render('contact/index.html.twig', [
+            //     'email' => $email
+            // ]);
            
             $manager->persist($contact);
             $manager->flush();
